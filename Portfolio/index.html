@@ -1,293 +1,172 @@
-html:<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website - Drazen</title>
-    
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Link to local style.css -->
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Huze Zacharry Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
+
 <body>
 
-    <!-- BACKGROUND ANIMATED GLOW & GRID -->
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
-    <div class="grid-pattern"></div>
 
-    <!-- COOL INTRO ANIMATION SCREEN -->
-    <div id="intro-loader">
-        <h1 class="intro-title">WELCOME</h1>
-        <p class="intro-subtitle">RIOT</p>
-    </div>
+<header>
 
-    <!-- IMAGE LIGHTBOX MODAL -->
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg" alt="Expanded View">
-        <div id="caption"></div>
-    </div>
+<div class="profile">
 
-    <!-- HEADER / NAVIGATION BAR -->
-    <header>
-        <a href="#home" class="logo">Drazen</a>
+<img src="profile.png">
 
-        <!-- Hamburger Icon for Mobile -->
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+</div>
 
-        <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About Me</a>        
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-        </nav>
-    </header>
 
-    <!-- HOME SECTION -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1>Hi, <span>I'm Drazen I. Nepa Jr</span></h1>
-            <h3 class="typing-text">I'm a <span>Web Developer & Designer</span></h3>
+<h1>Huze Zacharry N. Laganson</h1>
 
-            <div class="social-icons">
-                <a href="https://www.facebook.com/drazen.nepa.9" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/drazen.nepa.9" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://github.com/drazen-nepa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-            </div>
+<h2>BSIT STUDENT | DEVELOPER</h2>
 
-            <div class="button-group">
-                <a href="#about" class="btn">About Me</a>
-                <a href="#projects" class="btn btn-primary">View My Projects</a>
-            </div>
-        </div>
 
-        <div class="home-img">
-            <div class="img-wrapper">
-                <img src="assets/profile.jpg" alt="Profile Image">
-            </div>
-        </div>
-    </section>
+<p class="intro">
+Building technology solutions while improving myself through discipline and fitness.
+</p>
 
-    <!-- ABOUT ME SECTION -->
-    <section id="about" class="about-section">
-        <h2>About <span>Me</span></h2>
-        <p class="about-content">
-            I'm a graphic designer and web developer with a passion for creating visually appealing and user-friendly digital experiences. 
-            I am 20 years old, studying BSIT 2A at UIC. My favorite colors are red and black. 
-            In my free time, I like watching anime, playing video games, and playing badminton.
-        </p>
 
-        <div class="about-stats">
-            <div class="stat-card">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <h3>BSIT 2A</h3>
-                <p>UIC Student</p>
-            </div>
-            <div class="stat-card">
-                <i class="fa-solid fa-code"></i>
-                <h3>Design & Dev</h3>
-                <p>Web Specialist</p>
-            </div>
-            <div class="stat-card">
-                <i class="fa-solid fa-gamepad"></i>
-                <h3>Gamer & Creator</h3>
-                <p>Anime & Gaming Enthusiast</p>
-            </div>
-        </div>
-    </section>
+<div class="social">
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="projects-section">
-        <h2>My <span>Projects</span></h2>
-        <div class="projects-grid">
-            
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="projects/pj.1.jpg" alt="Project 1 Showcase">
-                    <div class="project-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus view-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>UI Design Showcase</h3>
-                    <p>Modern gaming-inspired interface design centered around high contrast aesthetics.</p>
-                    <div class="project-tags">
-                        <span>Figma</span>
-                        <span>UI/UX</span>
-                        <span>Graphic Design</span>
-                    </div>
-                </div>
-            </div>
+<a href="#"><i class="fab fa-github"></i></a>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="projects/pj.2.jpg" alt="Project 2 Showcase">
-                    <div class="project-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus view-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Web Application</h3>
-                    <p>Dynamic responsive layout featuring custom JavaScript interactive elements.</p>
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
+<a href="#"><i class="fab fa-linkedin"></i></a>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="projects/pj.3.jpg" alt="Project 3 Showcase">
-                    <div class="project-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus view-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Brand Identity</h3>
-                    <p>Creative red and black thematic branding suite designed for esports & creators.</p>
-                    <div class="project-tags">
-                        <span>Photoshop</span>
-                        <span>Branding</span>
-                    </div>
-                </div>
-            </div>
+<a href="#"><i class="fab fa-facebook"></i></a>
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="projects/pj.4.jpg" alt="Project 4 Showcase">
-                    <div class="project-overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus view-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Interactive Concept</h3>
-                    <p>Frontend web build with smooth scroll triggers and dark mode optimizations.</p>
-                    <div class="project-tags">
-                        <span>Web Dev</span>
-                        <span>CSS Animation</span>
-                    </div>
-                </div>
-            </div>
+</div>
 
-        </div>
-    </section>
 
-    <!-- ACHIEVEMENTS SECTION -->
-    <section id="achievements" class="projects-section">
-        <h2>My <span>Achievements</span></h2>
-        <div class="projects-grid">
+</header>
 
-            <!-- Achievement 1 -->
-            <div class="project-card achievement-card">
-                <div class="project-img-wrapper">
-                    <img src="achievements/ach 1.jpg" alt="Achievement Certificate 1">
-                    <div class="project-overlay">
-                        <i class="fa-solid fa-award view-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Academic & Tech Recognition</h3>
-                    <p>Certificate of recognition for outstanding performance in IT projects.</p>
-                </div>
-            </div>
 
-            <!-- Achievement 2 -->
-            <div class="project-card achievement-card">
-                <div class="project-img-wrapper">
-                    <img src="achievements/ach 2.jpg" alt="Achievement Certificate 2">
-                    <div class="project-overlay">
-                        <i class="fa-solid fa-award view-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Design Competition</h3>
-                    <p>Awarded for excellence in graphic and digital media presentation.</p>
-                </div>
-            </div>
 
-        </div>
-    </section>
+<section class="container">
 
-    <!-- JAVASCRIPT -->
-    <script>
-        // 1. INTRO SCREEN TIMER (Fade out after 1.8 seconds)
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const loader = document.getElementById('intro-loader');
-                if (loader) {
-                    loader.classList.add('fade-out');
-                }
-            }, 1800);
-        });
 
-        // 2. LIGHTBOX IMAGE VIEWER FOR PROJECTS & ACHIEVEMENTS
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-        const captionText = document.getElementById("caption");
-        const closeModalBtn = document.querySelector(".close-modal");
-        const gridImages = document.querySelectorAll(".projects-grid img");
+<div class="card">
 
-        gridImages.forEach(img => {
-            img.addEventListener("click", function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            });
-        });
+<h3><i class="fa-solid fa-user"></i> About Me</h3>
 
-        closeModalBtn.onclick = function() {
-            modal.style.display = "none";
-        };
+<p>
+Hello! I'm Huze Zacharry N. Laganson, a BSIT student passionate about programming,
+technology, and continuous improvement. I enjoy creating digital solutions,
+learning new technologies, and developing my skills as an aspiring IT professional.
+</p>
 
-        modal.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
+</div>
 
-        // 3. MOBILE MENU TOGGLE
-        const menuIcon = document.getElementById('menu-icon');
-        const navbar = document.querySelector('nav');
 
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('fa-xmark');
-            navbar.classList.toggle('active');
-        };
 
-        // Close navbar when clicking any section link
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuIcon.classList.remove('fa-xmark');
-                navbar.classList.remove('active');
-            });
-        });
+<div class="card">
 
-        // 4. SCROLL SPY (Highlight nav links on scroll)
-        const sections = document.querySelectorAll('section');
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 150;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
+<h3><i class="fa-solid fa-code"></i> Skills</h3>
 
-                if (top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove('active');
-                        document.querySelector('nav a[href*=' + id + ']').classList.add('active');
-                    });
-                }
-            });
-        };
-    </script>
+<div class="skills">
+
+<span>Java</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>MySQL</span>
+<span>Git</span>
+<span>GitHub</span>
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3><i class="fa-solid fa-laptop-code"></i> Projects</h3>
+
+<ul>
+
+<li>Student Grading System (Java)</li>
+
+<li>Gym Membership System</li>
+
+<li>Health Center Management System</li>
+
+<li>Smart Farming Research</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+
+<p>
+Bachelor of Science in Information Technology
+<br><br>
+
+University of the Immaculate Conception
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3><i class="fa-solid fa-dumbbell"></i> Beyond Coding</h3>
+
+<p>
+Outside programming, I focus on fitness and building my physique.
+Training helps me develop discipline, consistency, and a growth mindset
+that I apply to my studies and future career.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3><i class="fa-solid fa-bullseye"></i> Goal</h3>
+
+<p>
+To become a skilled IT professional who creates useful, innovative,
+and user-friendly technology solutions.
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 Huze Zacharry N. Laganson
+
+</footer>
+
+
 </body>
 </html>
