@@ -3,8 +3,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-
-font-family:Arial, sans-serif;
+font-family:'Poppins',Arial;
 
 }
 
@@ -12,7 +11,6 @@ font-family:Arial, sans-serif;
 body{
 
 background:#050816;
-
 color:white;
 
 }
@@ -23,7 +21,7 @@ header{
 
 text-align:center;
 
-padding:80px 20px;
+padding:70px 20px;
 
 background:
 linear-gradient(135deg,#111827,#050816);
@@ -32,7 +30,7 @@ linear-gradient(135deg,#111827,#050816);
 
 
 
-.profile img{
+.profile{
 
 width:200px;
 
@@ -54,21 +52,19 @@ h1{
 
 font-size:45px;
 
-margin-top:25px;
+margin:25px;
 
 }
 
 
 
-header h2{
+h2{
 
 color:#00ff99;
 
-font-size:18px;
+font-size:20px;
 
 letter-spacing:3px;
-
-margin:15px;
 
 }
 
@@ -78,17 +74,21 @@ header p{
 
 color:#aaa;
 
+margin-top:20px;
+
 font-size:18px;
 
 }
 
 
 
+
 .social{
 
-margin-top:25px;
+margin-top:30px;
 
 }
+
 
 
 .social a{
@@ -102,12 +102,12 @@ margin:15px;
 }
 
 
+
 .social a:hover{
 
 color:#00ff99;
 
 }
-
 
 
 
@@ -127,7 +127,6 @@ grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 
 }
-
 
 
 
@@ -163,13 +162,12 @@ color:#00ff99;
 
 margin-bottom:20px;
 
-font-size:25px;
-
 }
 
 
 
-.card p{
+.card p,
+.card li{
 
 color:#ccc;
 
@@ -179,72 +177,21 @@ line-height:1.8;
 
 
 
-.project{
+.card li{
 
-background:#080b18;
-
-padding:20px;
-
-margin:15px 0;
-
-border-radius:15px;
-
-border-left:4px solid #00ff99;
+margin-left:20px;
 
 }
 
 
 
-.project h4{
+.card h4{
 
-color:#00ff99;
+color:white;
 
-margin-bottom:10px;
-
-}
-
-
-
-.project span{
-
-color:#aaa;
-
-font-size:14px;
+margin-top:20px;
 
 }
-
-
-
-
-.skills span{
-
-display:inline-block;
-
-padding:10px 20px;
-
-background:#080b18;
-
-border-radius:25px;
-
-margin:5px;
-
-color:#00ff99;
-
-border:1px solid #00ff99;
-
-}
-
-
-
-
-li{
-
-color:#ccc;
-
-margin:10px;
-
-}
-
 
 
 
