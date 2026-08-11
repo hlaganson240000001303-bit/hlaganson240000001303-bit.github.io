@@ -4,15 +4,10 @@
     box-sizing:border-box;
     font-family:'Poppins', Arial, sans-serif;
 }
-
 body{
     background:#050816;
     color:white;
 }
-
-
-/* HERO SECTION */
-
 header{
     min-height:100vh;
     display:flex;
@@ -23,8 +18,6 @@ header{
     background:
     linear-gradient(135deg,#020617,#0b1220,#001f3f);
 }
-
-
 .profile{
     width:190px;
     height:190px;
@@ -35,26 +28,18 @@ header{
     0 0 20px #00bfff,
     0 0 50px #0047ab;
 }
-
-
 header h1{
     font-size:45px;
     margin-top:25px;
     font-weight:700;
 }
-
-
 header h1 span{
     color:#00bfff;
 }
-
-
 header h2{
     color:#94a3b8;
     margin:10px;
 }
-
-
 header p{
     max-width:750px;
     margin:20px auto;
@@ -62,282 +47,117 @@ header p{
     line-height:1.8;
     font-size:17px;
 }
-
-
-
-/* BUTTON */
-
 .btn{
-
     display:inline-block;
     padding:12px 35px;
     margin:10px;
-
     color:white;
     text-decoration:none;
-
     background:#00bfff;
-
     border-radius:30px;
-
     transition:.3s;
-
     font-weight:bold;
-
 }
-
-
 .btn:hover{
-
     background:white;
     color:#001f3f;
-
     transform:scale(1.05);
-
 }
-
-
-
-/* SECTIONS */
-
-
 section{
-
     padding:80px 10%;
-
 }
-
-
 .title{
-
     text-align:center;
-
     font-size:38px;
-
     color:#00bfff;
-
     margin-bottom:45px;
-
 }
-
-
-
-/* ABOUT */
-
-
 .about{
-
     max-width:900px;
-
     margin:auto;
-
     text-align:center;
-
     line-height:1.9;
-
     color:#dbeafe;
-
 }
-
-
-
-/* CARDS */
-
-
 .cards{
-
     display:grid;
-
     grid-template-columns:
     repeat(auto-fit,minmax(260px,1fr));
-
     gap:30px;
-
 }
-
-
-
 .card{
-
     background:#111827;
-
     padding:30px;
-
     border-radius:20px;
-
     border:1px solid #1e40af;
-
     transition:.3s;
-
 }
-
-
-
 .card:hover{
-
     transform:translateY(-10px);
-
     box-shadow:
     0 0 20px #00bfff;
-
 }
-
-
-
 .card h3{
-
     color:#00bfff;
-
     margin-bottom:15px;
-
 }
-
-
 .card p{
-
     color:#cbd5e1;
-
     line-height:1.7;
-
 }
-
-
-
-/* SKILLS BAR */
-
-
 .skill{
-
     max-width:800px;
-
     margin:25px auto;
-
 }
-
-
-
 .skill-name{
-
     margin-bottom:10px;
-
     color:#e0f2fe;
-
 }
-
-
-
 .bar{
-
     height:14px;
-
     background:#1e293b;
-
     border-radius:20px;
-
     overflow:hidden;
-
 }
-
-
-
 .progress{
-
     height:100%;
-
     background:#00bfff;
-
     border-radius:20px;
-
 }
-
-
-
-/* SOCIAL LINKS */
-
-
 .contact{
-
     text-align:center;
-
 }
-
-
 .social a{
-
     display:inline-block;
-
     margin:15px;
-
     color:#00bfff;
-
     text-decoration:none;
-
     font-size:20px;
-
     transition:.3s;
-
 }
-
-
-
 .social a:hover{
-
     color:white;
-
 }
-
-
-
-/* FOOTER */
-
-
 footer{
-
     text-align:center;
-
     padding:25px;
-
     background:#020617;
-
     color:#94a3b8;
-
 }
-
-
-
-/* MOBILE DESIGN */
-
-
 @media(max-width:700px){
-
     header h1{
-
         font-size:32px;
-
     }
-
-
     header h2{
-
         font-size:20px;
-
     }
-
-
     .profile{
-
         width:150px;
-
         height:150px;
-
     }
-
-
     section{
-
         padding:50px 5%;
 
     }
-
 
 }
