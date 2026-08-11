@@ -1,16 +1,149 @@
-/* ===========================
-   FITNESS SKILLS GALLERY
-=========================== */
+/* ===============================
+   HUZE ZACHARRY PORTFOLIO STYLE
+   Professional Dark Blue Theme
+================================*/
 
 
-.fitness-gallery{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-    display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+*{
 
-    gap:25px;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+body{
+
+    background:
+    radial-gradient(circle at top,#0b2a4a,#020617 45%);
+
+    color:white;
+
+    line-height:1.7;
+
+}
+
+
+
+/* ===============================
+HEADER
+================================*/
+
+
+header{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+
+.profile{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #00aaff;
+
+    box-shadow:
+
+    0 0 30px #00aaff;
+
+    animation:float 3s infinite ease-in-out;
+
+}
+
+
+
+@keyframes float{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+header h1{
+
+    margin-top:30px;
+
+    font-size:35px;
+
+    color:#dbeafe;
+
+}
+
+
+
+header h2{
+
+    font-size:30px;
+
+    margin-top:10px;
+
+}
+
+
+
+header h3{
+
+    color:#00aaff;
+
+    margin-top:15px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+header p{
+
+    max-width:650px;
+
+    margin-top:20px;
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+/* SOCIAL BUTTON */
+
+
+.social{
 
     margin-top:30px;
 
@@ -18,119 +151,341 @@
 
 
 
+.social a{
 
-.fitness-photo{
+    display:inline-flex;
 
-    position:relative;
+    justify-content:center;
 
-    height:380px;
+    align-items:center;
 
-    overflow:hidden;
+    width:50px;
 
-    border-radius:25px;
+    height:50px;
 
-    border:1px solid #1e40af;
+    margin:8px;
 
-    background:#020617;
+    border-radius:50%;
 
-    transition:0.4s;
-
-}
-
-
-
-
-.fitness-photo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:0.5s;
-
-}
-
-
-
-
-.fitness-photo::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-    transparent,
-    rgba(0,0,0,0.9)
-    );
-
-}
-
-
-
-
-.photo-text{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:0;
-
-    padding:25px;
-
-    z-index:2;
-
-}
-
-
-
-
-.photo-text h4{
+    background:#0f172a;
 
     color:#00aaff;
 
+    border:1px solid #00aaff;
+
     font-size:22px;
 
-    margin-bottom:10px;
+    transition:.4s;
 
 }
 
 
 
+.social a:hover{
 
-.photo-text p{
+    background:#00aaff;
 
     color:white;
 
-    font-size:14px;
+    transform:translateY(-8px);
+
+    box-shadow:0 0 25px #00aaff;
 
 }
 
 
 
 
-.fitness-photo:hover{
 
-    transform:translateY(-10px);
+/* ===============================
+CONTENT
+================================*/
+
+
+.container{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+
+.card{
+
+    background:
+
+    rgba(15,23,42,0.75);
+
+
+    backdrop-filter:blur(10px);
+
+
+    margin:30px 0;
+
+
+    padding:35px;
+
+
+    border-radius:25px;
+
+
+    border:1px solid rgba(0,170,255,.3);
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.4);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.card:hover{
+
+
+    transform:translateY(-8px);
+
 
     border-color:#00aaff;
 
+
     box-shadow:
-    0 0 30px rgba(0,170,255,0.6);
+
+    0 0 35px rgba(0,170,255,.4);
+
 
 }
 
 
 
 
-.fitness-photo:hover img{
 
-    transform:scale(1.1);
+.card h3{
+
+
+    font-size:28px;
+
+
+    color:#00aaff;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.card h4{
+
+
+    color:#7dd3fc;
+
+
+    font-size:21px;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+.card p{
+
+
+    color:#d1d5db;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+LIST STYLE
+================================*/
+
+
+.card ul{
+
+    list-style:none;
+
+}
+
+
+
+.card li{
+
+
+    background:#111827;
+
+
+    margin:12px 0;
+
+
+    padding:14px;
+
+
+    border-radius:12px;
+
+
+    border-left:4px solid #00aaff;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.card li:hover{
+
+
+    transform:translateX(10px);
+
+
+    background:#1e293b;
+
+
+}
+
+
+
+
+
+/* ===============================
+PROJECT BUTTON
+================================*/
+
+
+.project-btn{
+
+
+    display:inline-block;
+
+
+    margin-top:20px;
+
+
+    padding:14px 35px;
+
+
+    border-radius:40px;
+
+
+    text-decoration:none;
+
+
+    color:white;
+
+
+    font-weight:600;
+
+
+    background:
+
+    linear-gradient(135deg,#00aaff,#0066ff);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.project-btn:hover{
+
+
+    transform:scale(1.08);
+
+
+    box-shadow:
+
+    0 0 30px #00aaff;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+SKILL TAG EFFECT
+================================*/
+
+
+.card li::before{
+
+
+    content:"✓ ";
+
+
+    color:#00aaff;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+RESPONSIVE
+================================*/
+
+
+@media(max-width:768px){
+
+
+header h1{
+
+    font-size:25px;
+
+}
+
+
+header h2{
+
+    font-size:22px;
+
+}
+
+
+.profile{
+
+    width:160px;
+
+    height:160px;
+
+}
+
+
+.card{
+
+    padding:25px;
+
+}
+
+
 
 }
