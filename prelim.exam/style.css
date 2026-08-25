@@ -1,24 +1,19 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Segoe UI", Arial, sans-serif;
 }
-
 body {
     background: #0b1220;
     color: #ffffff;
     line-height: 1.6;
 }
-
-/* Header */
 .main-header {
     background: #08101f;
     padding: 20px 0;
     border-bottom: 2px solid #1e90ff;
 }
-
 .header-container {
     width: 90%;
     margin: auto;
@@ -26,39 +21,30 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
     color: white;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
 }
-
 .highlight {
     color: #1e90ff;
 }
-
-/* Navigation */
 .nav-list {
     display: flex;
     list-style: none;
     gap: 30px;
 }
-
 .nav-link {
     text-decoration: none;
     color: white;
     font-size: 18px;
     transition: 0.3s;
 }
-
 .nav-link:hover,
 .nav-link.active {
     color: #1e90ff;
 }
-
-
-/* Hero Section */
 .hero-section {
     min-height: 500px;
     display: flex;
@@ -71,52 +57,40 @@ body {
     background-size: cover;
     background-position: center;
 }
-
 .hero-container {
     width: 85%;
     margin: auto;
     text-align: center;
 }
-
 .hero-title {
     font-size: 50px;
     margin-bottom: 20px;
 }
-
 .highlight-text {
     color: #1e90ff;
 }
-
 .hero-subtitle {
     max-width: 900px;
     margin: auto;
     font-size: 18px;
     color: #dcdcdc;
 }
-
-
-/* Sections */
 .section-container {
     width: 85%;
     margin: auto;
     padding: 60px 0;
 }
-
 .section-title {
     text-align: center;
     font-size: 35px;
     margin-bottom: 40px;
     color: #1e90ff;
 }
-
-
-/* Program Cards */
 .programs-grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 25px;
 }
-
 .program-card {
     background: #111c33;
     padding: 30px;
@@ -124,52 +98,39 @@ body {
     border: 1px solid #1e90ff;
     transition: 0.3s;
 }
-
 .program-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px #1e90ff;
 }
-
 .card-title {
     color: #1e90ff;
     margin-bottom: 15px;
 }
-
 .card-desc {
     color: #ddd;
 }
-
-
-/* Table */
 .table-wrapper {
     overflow-x: auto;
 }
-
 .specs-table {
     width: 100%;
     border-collapse: collapse;
     background: #111c33;
 }
-
 .specs-table th {
     background: #1e90ff;
     color: white;
     padding: 15px;
 }
-
 .specs-table td {
     padding: 15px;
     border: 1px solid #334;
     color: #ddd;
 }
-
 .bold-text {
     font-weight: bold;
     color: #1e90ff;
 }
-
-
-/* Form */
 .form-wrapper {
     background: #111c33;
     padding: 40px;
@@ -177,17 +138,14 @@ body {
     max-width: 600px;
     margin: auto;
 }
-
 .form-group {
     margin-bottom: 20px;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 8px;
     color: #1e90ff;
 }
-
 input,
 select {
     width: 100%;
@@ -198,8 +156,6 @@ select {
     color: white;
     border: 1px solid #1e90ff;
 }
-
-
 .btn {
     width: 100%;
     padding: 14px;
@@ -215,9 +171,6 @@ select {
 .btn:hover {
     background: #0066cc;
 }
-
-
-/* Footer */
 .main-footer {
     background: #08101f;
     padding: 25px;
@@ -234,9 +187,6 @@ select {
     color: #ccc;
     font-size: 14px;
 }
-
-
-/* Responsive Design */
 @media(max-width: 900px){
 
     .programs-grid {
