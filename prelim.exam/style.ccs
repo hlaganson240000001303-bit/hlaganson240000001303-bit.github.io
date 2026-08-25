@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Base Styles & CSS Variables
-   ========================================================================== */
 :root {
     --primary-color: #8b0000;      /* Deep Red (UIC institutional color) */
     --primary-hover: #a00000;
@@ -42,10 +39,6 @@ body {
     color: var(--primary-color);
     margin-bottom: 2rem;
 }
-
-/* ==========================================================================
-   Header & Navigation
-   ========================================================================== */
 .main-header {
     background-color: var(--bg-white);
     border-bottom: 2px solid var(--primary-color);
@@ -92,10 +85,6 @@ body {
 .nav-link.active {
     color: var(--primary-color);
 }
-
-/* ==========================================================================
-   Hero Section
-   ========================================================================== */
 .hero-section {
     background-color: var(--primary-color);
     color: var(--bg-white);
