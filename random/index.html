@@ -1,9 +1,276 @@
-navigation menu
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Equipment and Damage Tracker</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --danger: #dc2626;
+            --success: #16a34a;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --border: #cbd5e1;
+        }
 
-<select>
-  <option>START</option>
-  <option>COMAND</option>
-  <option>ORDER</option>
-  <option>CONTACT</option>
-  <option>END</option>
-</select>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            color: var(--text);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        card, .card {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        button.danger-btn {
+            background-color: var(--danger);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        table, th, td {
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 650;
+            color: white;
+        }
+
+        .badge-borrowed { background-color: var(--primary); }
+        .badge-returned { background-color: var(--success); }
+        .badge-damaged { background-color: var(--danger); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Library Equipment & Damage System</h1>
+    
+    <div class="grid">
+        <!-- Left Column: Forms -->
+        <div>
+            <div class="card">
+                <h2>New Borrow Entry</h2>
+                <form id="borrowForm">
+                    <label for="borrowerName">Borrower Name</label>
+                    <input type="text" id="borrowerName" required>
+
+                    <label for="borrowerId">ID Number</label>
+                    <input type="text" id="borrowerId" required>
+
+                    <label for="equipment">Equipment</label>
+                    <select id="equipment">
+                        <option value="Projector A">Projector A</option>
+                        <option value="Projector B">Projector B</option>
+                        <option value="Projector Screen">Projector Screen</option>
+                        <option value="Laptop">Laptop</option>
+                    </select>
+
+                    <label for="borrowTime">Borrow Date & Time</label>
+                    <input type="datetime-local" id="borrowTime" required>
+
+                    <label for="returnTime">Expected Return Time</label>
+                    <input type="datetime-local" id="returnTime" required>
+
+                    <button type="submit">Log Borrow Event</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Record Damage / Incident</h2>
+                <form id="damageForm">
+                    <label for="damagedId">Borrower ID / Name</label>
+                    <input type="text" id="damagedId" required>
+
+                    <label for="damagedItem">Item Involved</label>
+                    <input type="text" id="damagedItem" required>
+
+                    <label for="damageDesc">Description of Damage</label>
+                    <textarea id="damageDesc" rows="3" required></textarea>
+
+                    <button type="submit" class="danger-btn">Log Damage Record</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column: Tables/Logs -->
+        <div>
+            <div class="card">
+                <h2>Active Borrowing Records</h2>
+                <div style="overflow-x:auto;">
+                    <table id="borrowTable">
+                        <thead>
+                            <tr>
+                                <th>Name (ID)</th>
+                                <th>Item</th>
+                                <th>Borrowed</th>
+                                <th>Return Due</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Damage & System Incident Logs</h2>
+                <div style="overflow-x:auto;">
+                    <table id="damageTable">
+                        <thead>
+                            <tr>
+                                <th>Person / ID</th>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Date Logged</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle Borrow Form
+    document.getElementById('borrowForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('borrowerName').value;
+        const id = document.getElementById('borrowerId').value;
+        const equipment = document.getElementById('equipment').value;
+        const borrowTime = document.getElementById('borrowTime').value;
+        const returnTime = document.getElementById('returnTime').value;
+
+        const tbody = document.getElementById('borrowTable').querySelector('tbody');
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${name} (${id})</td>
+            <td>${equipment}</td>
+            <td>${borrowTime.replace('T', ' ')}</td>
+            <td>${returnTime.replace('T', ' ')}</td>
+            <td><span class="badge badge-borrowed">Borrowed</span></td>
+            <td><button onclick="markReturned(this)" style="padding: 4px 8px; font-size: 12px; width: auto;">Return</button></td>
+        `;
+        tbody.appendChild(row);
+        this.reset();
+    });
+
+    function markReturned(btn) {
+        const row = btn.closest('tr');
+        const badge = row.querySelector('.badge');
+        badge.className = 'badge badge-returned';
+        badge.textContent = 'Returned';
+        btn.remove();
+    }
+
+    // Handle Damage Form
+    document.getElementById('damageForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const id = document.getElementById('damagedId').value;
+        const item = document.getElementById('damagedItem').value;
+        const desc = document.getElementById('damageDesc').value;
+        const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+        const tbody = document.getElementById('damageTable').querySelector('tbody');
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${id}</td>
+            <td>${item}</td>
+            <td>${desc}</td>
+            <td>${now}</td>
+        `;
+        tbody.appendChild(row);
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
