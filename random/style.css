@@ -1,15 +1,13 @@
-/* Custom variables for theme consistency */
 :root {
-    --primary: #2563eb;       /* Blue color for active check-outs */
-    --danger: #dc2626;        /* Red color for system/item damage */
-    --success: #16a34a;       /* Green color for successful returns */
-    --background: #f8fafc;    /* Light grey background for the app */
-    --surface: #ffffff;       /* Pure white for dashboard cards */
-    --text: #1e293b;          /* Dark slate for readable typography */
-    --border: #cbd5e1;        /* Subtle grey borders */
+    --primary: #2563eb;       
+    --danger: #dc2626;      
+    --success: #16a34a;       
+    --background: #f8fafc;    
+    --surface: #ffffff; 
+    --text: #1e293b;         
+    --border: #cbd5e1;        
 }
 
-/* Global setup */
 body {
     font-family: system-ui, -apple-system, sans-serif;
     background-color: var(--background);
@@ -28,7 +26,6 @@ h1, h2 {
     margin-top: 0;
 }
 
-/* Responsive grid layout */
 .grid {
     display: grid;
     grid-template-columns: 1fr 2fr; /* Forms occupy 1 part, tables occupy 2 parts */
@@ -41,7 +38,6 @@ h1, h2 {
     }
 }
 
-/* UI Cards for separating sections */
 .card {
     background: var(--surface);
     padding: 20px;
@@ -50,7 +46,6 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* Form Styling */
 form label {
     display: block;
     margin-bottom: 5px;
@@ -67,7 +62,6 @@ form input, form select, form textarea {
     box-sizing: border-box; /* Ensures padding doesn't affect width calculations */
 }
 
-/* Actions and Buttons */
 button {
     background-color: var(--primary);
     color: white;
@@ -88,7 +82,6 @@ button.danger-btn {
     background-color: var(--danger);
 }
 
-/* Log Tables styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -109,7 +102,6 @@ th {
     background-color: #f1f5f9;
 }
 
-/* Status Badges */
 .badge {
     padding: 4px 8px;
     border-radius: 4px;
