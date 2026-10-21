@@ -1,1 +1,281 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf0;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: #064e3b;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: #ffd700;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 520px;
+    background: linear-gradient(135deg, #8b0000, #c1121f, #064e3b);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 8%;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.content {
+    max-width: 500px;
+    z-index: 1;
+}
+
+.welcome {
+    color: #ffd700;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 75px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #ffd700;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffd700;
+    color: #064e3b;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* SNOW DECORATION */
+.snow {
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    right: 5%;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 25px;
+    opacity: 0.8;
+    animation: snowfall 4s ease-in-out infinite alternate;
+}
+
+@keyframes snowfall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(35px);
+    }
+}
+
+/* CHRISTMAS TREE */
+.tree {
+    position: relative;
+    width: 260px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.star {
+    font-size: 45px;
+    z-index: 2;
+}
+
+.layer {
+    width: 0;
+    height: 0;
+    border-left: solid transparent;
+    border-right: solid transparent;
+    border-bottom: solid #087f4f;
+    margin-top: -5px;
+    filter: drop-shadow(0 5px 3px #002b1b);
+}
+
+.layer1 {
+    border-left-width: 45px;
+    border-right-width: 45px;
+    border-bottom-width: 80px;
+}
+
+.layer2 {
+    border-left-width: 70px;
+    border-right-width: 70px;
+    border-bottom-width: 100px;
+}
+
+.layer3 {
+    border-left-width: 95px;
+    border-right-width: 95px;
+    border-bottom-width: 110px;
+}
+
+.trunk {
+    width: 35px;
+    height: 35px;
+    background: #784421;
+}
+
+.gifts {
+    font-size: 35px;
+    margin-top: 5px;
+}
+
+/* PARTY DETAILS */
+.details {
+    text-align: center;
+    padding: 65px 8%;
+    color: #064e3b;
+}
+
+.details h2,
+.activities h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 230px;
+    box-shadow: 0 5px 20px #00000015;
+    border-top: 5px solid #c1121f;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #c1121f;
+}
+
+.card p {
+    color: #333;
+}
+
+/* ACTIVITIES */
+.activities {
+    text-align: center;
+    background: #064e3b;
+    padding: 60px 20px;
+}
+
+.activity-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.activity-list p {
+    background: #ffffff15;
+    border: 1px solid #ffffff40;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.activities h3 {
+    color: #ffd700;
+}
+
+/* FOOTER */
+footer {
+    background: #052e22;
+    text-align: center;
+    padding: 25px;
+    line-height: 2;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .tree {
+        transform: scale(0.85);
+        margin-top: -20px;
+    }
+
+    .details h2,
+    .activities h2 {
+        font-size: 26px;
+    }
+}
+
