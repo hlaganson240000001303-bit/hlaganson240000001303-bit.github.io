@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jollibee Order Interface</title>
+    <style>
+        :root {
+            --jb-red: #cc0000;
+            --jb-red-hover: #a30000;
+            --jb-yellow: #ffcc00;
+            --jb-white: #ffffff;
+            --jb-gray-light: #f8f9fa;
+            --jb-gray-dark: #333333;
+            --jb-text-muted: #666666;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--jb-gray-light);
+            color: var(--jb-gray-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--jb-red);
+            color: var(--jb-white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--jb-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-placeholder {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo-placeholder span {
+            color: var(--jb-yellow);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--jb-white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--jb-yellow);
+        }
+
+        /* Main Container Layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            padding: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Menu Section */
+        .menu-section h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-left: 5px solid var(--jb-red);
+            padding-left: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-card {
+            background-color: var(--jb-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-image {
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--jb-text-muted);
+            position: relative;
+        }
+
+        /* Custom image placeholders mimicking iconic items */
+        .chickenjoy { background: radial-gradient(circle, #f3e5ab 0%, #d2b48c 100%); }
+        .spaghetti { background: radial-gradient(circle, #ffcccc 0%, #ff6666 100%); }
+        .yumburger { background: radial-gradient(circle, #ffe4b5 0%, #cd853f 100%); }
+        .peachmango { background: radial-gradient(circle, #ffe0b2 0%, #ffb74d 100%); }
+
+        .item-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .item-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .item-desc {
+            font-size: 13px;
+            color: var(--jb-text-muted);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--jb-red);
+        }
+
+        .btn-add {
+            background-color: var(--jb-yellow);
+            color: var(--jb-gray-dark);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-add:hover {
+            background-color: #e6b800;
+        }
+
+        /* Order Summary / Cart Sidebar */
+        .cart-sidebar {
+            background-color: var(--jb-white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .cart-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--jb-gray-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-items {
+            list-style: none;
+            margin-bottom: 20px;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .cart-item-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+        }
+
+        .cart-item-qty {
+            font-size: 12px;
+            color: var(--jb-text-muted);
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+        }
+
+        .totals-section {
+            border-top: 2px solid var(--jb-gray-light);
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .total-row.grand-total {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--jb-red);
+            margin-top: 5px;
+        }
+
+        .btn-checkout {
+            background-color: var(--jb-red);
+            color: var(--jb-white);
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-checkout:hover {
+            background-color: var(--jb-red-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-placeholder">JOLLI<span>BEE</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Promos</a></li>
+            <li><a href="#">Track Order</a></li>
+        </ul>
+    </header>
+
+    <!-- Content Area -->
+    <div class="main-container">
+        
+        <!-- Menu Section -->
+        <main class="menu-section">
+            <h2>Popular Menu</h2>
+            <div class="menu-grid">
+                
+                <!-- Card 1 -->
+                <div class="menu-card">
+                    <div class="item-image chickenjoy">🍗 Chickenjoy</div>
+                    <div class="item-info">
+                        <div class="item-title">1-pc. Chickenjoy</div>
+                        <div class="item-desc">Our signature crispy, juicy, and world-famous fried chicken served with gravy.</div>
+                        <div class="item-footer">
+                            <div class="item-price">₱95.00</div>
+                            <button class="btn-add">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="menu-card">
+                    <div class="item-image spaghetti">🍝 Jolly Spaghetti</div>
+                    <div class="item-info">
+                        <div class="item-title">Jolly Spaghetti</div>
+                        <div class="item-desc">Sweet-style sauce packed with ham, hotdog slices, and topped with grated cheese.</div>
+                        <div class="item-footer">
+                            <div class="item-price">₱60.00</div>
+                            <button class="btn-add">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="menu-card">
+                    <div class="item-image yumburger">🍔 Yumburger</div>
+                    <div class="item-info">
+                        <div class="item-title">Yumburger</div>
+                        <div class="item-desc">Your favorite beef burger patty with our special dressing in a soft bun.</div>
+                        <div class="item-footer">
+                            <div class="item-price">₱40.00</div>
+                            <button class="btn-add">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="menu-card">
+                    <div class="item-image peachmango">🥧 Peach Mango Pie</div>
+                    <div class="item-info">
+                        <div class="item-title">Peach Mango Pie</div>
 
