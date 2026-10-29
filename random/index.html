@@ -3,273 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Equipment and Damage Tracker</title>
+    <title>Annual Christmas Party Invitation</title>
     <style>
+        /* --- Google Fonts --- */
+        @import url('https://googleapis.com');
+
+        /* --- Design Tokens & Variables --- */
         :root {
-            --primary: #2563eb;
-            --danger: #dc2626;
-            --success: #16a34a;
-            --background: #f8fafc;
-            --surface: #ffffff;
-            --text: #1e293b;
-            --border: #cbd5e1;
+            --primary-red: #c62828;
+            --holiday-green: #1b5e20;
+            --gold: #ffd700;
+            --snow-white: #f5f5f5;
+            --dark-bg: #0b131a;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
         }
 
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--background);
-            color: var(--text);
+        /* --- Global Resets & Styling --- */
+        * {
             margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1, h2 {
-            color: var(--text);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        card, .card {
-            background: var(--surface);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        form input, form select, form textarea {
-            width: 100%;
-            padding: 8px 12px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        button {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #15222e; 100%);
+            color: var(--snow-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Pure CSS Christmas Lights --- */
+        .light-string {
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            pointer-events: none;
+            z-index: 10;
+            list-style: none;
+        }
+
+        .light-string li {
+            position: relative;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 12px;
+            height: 28px;
+            border-radius: 50%;
+            margin: 20px 12px;
+            background: var(--gold);
+            box-shadow: 0px 4px 24px 3px var(--gold);
+            animation-name: flash-1;
+            animation-duration: 2s;
+        }
+
+        .light-string li:nth-child(2n+1) {
+            background: var(--primary-red);
+            box-shadow: 0px 4px 24px 3px var(--primary-red);
+            animation-name: flash-2;
+            animation-duration: 0.4s;
+        }
+
+        .light-string li:nth-child(4n+2) {
+            background: #2196f3;
+            box-shadow: 0px 4px 24px 3px #2196f3;
+            animation-name: flash-3;
+            animation-duration: 1.1s;
+        }
+
+        .light-string li:nth-child(odd) {
+            animation-duration: 1.8s;
+        }
+
+        @keyframes flash-1 {
+            0%, 100% { background: var(--gold); box-shadow: 0px 4px 24px 3px var(--gold); }
+            50% { background: rgba(255, 215, 0, 0.2); box-shadow: 0px 4px 24px 3px rgba(255, 215, 0, 0.1); }
+        }
+
+        @keyframes flash-2 {
+            0%, 100% { background: var(--primary-red); box-shadow: 0px 4px 24px 3px var(--primary-red); }
+            50% { background: rgba(198, 40, 40, 0.2); box-shadow: 0px 4px 24px 3px rgba(198, 40, 40, 0.1); }
+        }
+
+        @keyframes flash-3 {
+            0%, 100% { background: #2196f3; box-shadow: 0px 4px 24px 3px #2196f3; }
+            50% { background: rgba(33, 150, 243, 0.2); box-shadow: 0px 4px 24px 3px rgba(33, 150, 243, 0.1); }
+        }
+
+        /* --- Layout Container --- */
+        .card-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+            margin-top: 40px;
+        }
+
+        /* --- Typography --- */
+        .festive-title {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 3.5rem;
+            color: var(--primary-red);
+            text-shadow: 2px 2px 0px var(--gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 2.5rem;
             font-weight: 600;
-            width: 100%;
         }
 
-        button:hover {
-            opacity: 0.9;
+        /* --- Event Details Grid --- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
         }
 
-        button.danger-btn {
-            background-color: var(--danger);
+        .detail-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 14px;
+        .detail-item h3 {
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
         }
 
-        table, th, td {
-            border: 1px solid var(--border);
+        .detail-item p {
+            font-size: 1.1rem;
+            font-weight: 400;
         }
 
-        th, td {
-            padding: 10px;
+        /* --- Party Perks List --- */
+        .party-perks {
             text-align: left;
+            margin: 0 auto 2.5rem auto;
+            max-width: 400px;
+            background: rgba(27, 94, 32, 0.15);
+            border: 1px solid rgba(27, 94, 32, 0.3);
+            padding: 1.5rem;
+            border-radius: 16px;
         }
 
-        th {
-            background-color: #f1f5f9;
+        .party-perks h4 {
+            color: #fff;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            font-size: 1.1rem;
         }
 
-        .badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 650;
+        .party-perks ul {
+            list-style: none;
+        }
+
+        .party-perks li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .party-perks li::before {
+            content: "🎄";
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* --- Interactive Button --- */
+        .rsvp-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red) 0%, #b71c1c 100%);
             color: white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        .badge-borrowed { background-color: var(--primary); }
-        .badge-returned { background-color: var(--success); }
-        .badge-damaged { background-color: var(--danger); }
+        .rsvp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.6);
+            background: linear-gradient(135deg, #d32f2f 0%, var(--primary-red) 100%);
+        }
+
+        .rsvp-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 480px) {
+            .festive-title {
+                font-size: 2.5rem;
+            }
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-container {
+                padding: 2rem 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Library Equipment & Damage System</h1>
-    
-    <div class="grid">
-        <div>
-            <div class="card">
-                <h2>New Borrow Entry</h2>
-                <form id="borrowForm">
-                    <label for="borrowerName">Student Name</label>
-                    <input type="text" id="borrowerName" required>
+    <!-- Festive Hanging Lights -->
+    <ul class="light-string">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
 
-                    <label for="borrowerId">ID Number</label>
-                    <input type="text" id="borrowerId" required>
+    <!-- Main Party Card -->
+    <div class="card-container">
+        <h1 class="festive-title">Eat, Drink & Be Merry!</h1>
+        <div class="subtitle">Annual Christmas Party</div>
 
-                    <label for="equipment">Equipment</label>
-                    <select id="equipment">
-                        <option value="Projector A">Projector A</option>
-                        <option value="Projector B">Projector B</option>
-                        <option value="Projector Screen">Projector Screen</option>
-                        <option value="Laptop">Laptop</option>
-                    </select>
-
-                    <label for="borrowTime">Borrow Date & Time</label>
-                    <input type="datetime-local" id="borrowTime" required>
-
-                    <label for="returnTime">Expected Return Time</label>
-                    <input type="datetime-local" id="returnTime" required>
-
-                    <button type="submit">Log Borrow Event</button>
-                </form>
+        <!-- Schedule & Location Info -->
+        <div class="details-grid">
+            <div class="detail-item">
+                <h3>When</h3>
+                <p>December 18, 2026</p>
+                <p style="font-size: 0.9rem; color: #aaa;">7:00 PM onwards</p>
             </div>
-
-            <div class="card">
-                <h2>Record Damage / Incident</h2>
-                <form id="damageForm">
-                    <label for="damagedId">Borrower ID / Name</label>
-                    <input type="text" id="damagedId" required>
-
-                    <label for="damagedItem">Item Involved</label>
-                    <input type="text" id="damagedItem" required>
-
-                    <label for="damageDesc">Description of Damage</label>
-                    <textarea id="damageDesc" rows="3" required></textarea>
-
-                    <button type="submit" class="danger-btn">Log Damage Record</button>
-                </form>
+            <div class="detail-item">
+                <h3>Where</h3>
+                <p>The Grand Lodge</p>
+                <p style="font-size: 0.9rem; color: #aaa;">123 Festive Way, North Pole</p>
             </div>
         </div>
 
-        <!-- Right Column: Tables/Logs -->
-        <div>
-            <div class="card">
-                <h2>Active Borrowing Records</h2>
-                <div style="overflow-x:auto;">
-                    <table id="borrowTable">
-                        <thead>
-                            <tr>
-                                <th>Name (ID)</th>
-                                <th>Item</th>
-                                <th>Borrowed</th>
-                                <th>Return Due</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Dynamic content -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>Damage & System Incident Logs</h2>
-                <div style="overflow-x:auto;">
-                    <table id="damageTable">
-                        <thead>
-                            <tr>
-                                <th>Person / ID</th>
-                                <th>Item</th>
-                                <th>Description</th>
-                                <th>Date Logged</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Dynamic content -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <!-- Highlights Panel -->
+        <div class="party-perks">
+            <h4>What to Expect:</h4>
+            <ul>
+                <li>Ugly Sweater Competition (with prizes!)</li>
+                <li>Gourmet Holiday Dinner & Open Bar</li>
+                <li>White Elephant Gift Exchange ($20 limit)</li>
+                <li>Live DJ & Festive Dance Floor</li>
+            </ul>
         </div>
+
+        <!-- Action Call -->
+        <button class="rsvp-button" onclick="alert('Thank you for your RSVP! See you at the party! 🎅✨')">
+            RSVP Safely Here
+        </button>
     </div>
-</div>
-
-<script>
-    // Handle Borrow Form
-    document.getElementById('borrowForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('borrowerName').value;
-        const id = document.getElementById('borrowerId').value;
-        const equipment = document.getElementById('equipment').value;
-        const borrowTime = document.getElementById('borrowTime').value;
-        const returnTime = document.getElementById('returnTime').value;
-
-        const tbody = document.getElementById('borrowTable').querySelector('tbody');
-        const row = document.createElement('tr');
-        
-        row.innerHTML = `
-            <td>${name} (${id})</td>
-            <td>${equipment}</td>
-            <td>${borrowTime.replace('T', ' ')}</td>
-            <td>${returnTime.replace('T', ' ')}</td>
-            <td><span class="badge badge-borrowed">Borrowed</span></td>
-            <td><button onclick="markReturned(this)" style="padding: 4px 8px; font-size: 12px; width: auto;">Return</button></td>
-        `;
-        tbody.appendChild(row);
-        this.reset();
-    });
-
-    function markReturned(btn) {
-        const row = btn.closest('tr');
-        const badge = row.querySelector('.badge');
-        badge.className = 'badge badge-returned';
-        badge.textContent = 'Returned';
-        btn.remove();
-    }
-
-    // Handle Damage Form
-    document.getElementById('damageForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const id = document.getElementById('damagedId').value;
-        const item = document.getElementById('damagedItem').value;
-        const desc = document.getElementById('damageDesc').value;
-        const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
-
-        const tbody = document.getElementById('damageTable').querySelector('tbody');
-        const row = document.createElement('tr');
-        
-        row.innerHTML = `
-            <td>${id}</td>
-            <td>${item}</td>
-            <td>${desc}</td>
-            <td>${now}</td>
-        `;
-        tbody.appendChild(row);
-        this.reset();
-    });
-</script>
 
 </body>
 </html>
